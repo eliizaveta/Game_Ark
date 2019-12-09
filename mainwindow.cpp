@@ -52,6 +52,7 @@ void MainWindow::newLevel(int lvl)
     winMessage();
     return;
   }
+
   delete game;
   game = new Game(lvl);
   game->show();

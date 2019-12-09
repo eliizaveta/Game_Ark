@@ -101,7 +101,6 @@ border-radius: 8px;
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #DEB8A0;
-box-shadow: 0 0 0 1px #a27b62;
 </string>
     </property>
     <property name="text">

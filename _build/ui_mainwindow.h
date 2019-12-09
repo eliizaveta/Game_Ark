@@ -94,7 +94,6 @@ public:
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(0, 0, 341, 311));
         label->setStyleSheet(QString::fromUtf8("background-color: #DEB8A0;\n"
-"box-shadow: 0 0 0 1px #a27b62;\n"
 ""));
         MainWindow->setCentralWidget(centralwidget);
         label->raise();

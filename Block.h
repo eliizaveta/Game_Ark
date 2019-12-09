@@ -11,6 +11,7 @@ public:
   Block(Qt::GlobalColor color = Qt::black, bool dist = true,  QGraphicsItem* parent = nullptr);
 
   bool dist;
+
 };
 
 #endif

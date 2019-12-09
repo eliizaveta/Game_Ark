@@ -39,9 +39,9 @@ void Game::start()
   (this->*startLevel[lvl - 1])();
 }
 
-void Game::createBlockColumn(double x)
+void Game::createBlockColumn(int x, int y, int n)
 {
-  for (int i = 0; i < 1; ++i)
+  for (int i = y; i < n; ++i)
   {
     Block* block = new Block(colors[i]);
     blockVec.push_back(block);
@@ -52,29 +52,56 @@ void Game::createBlockColumn(double x)
 
 void Game::createLevel1()
 {
-  for (double i = 0; i < 1; ++i)
+  for (int i = 0; i < 7; ++i)
   {
-    createBlockColumn(i*92);
+    createBlockColumn(i*92, 0, 6);
   }
 }
 
 void Game::createLevel2()
 {
-  Block* block = new Block(Qt::gray, false);
-  //blockVec.push_back(block);
-  block->setPos(400,400);
-  scene->addItem(block);
-
-  for (double i = 0; i < 3; ++i)
+  for (int i = 0; i < 3; ++i)
   {
-    createBlockColumn(i*92);
+    for (int j = 0; j < 3; ++j)
+    {
+      Block* block = new Block(Qt::gray, false);
+      block->setPos(i*92+184, j*42+126);
+      scene->addItem(block);
+    }
+  }
+
+  for (int i = 0; i < 7; ++i)
+  {
+    createBlockColumn(i*92, 0, 3);
+  }
+
+  for (int i = 0; i < 2; ++i)
+  {
+    createBlockColumn(i*92, 3, 6);
+  }
+
+  for (int i = 5; i < 7; ++i)
+  {
+    createBlockColumn(i*92, 3, 6);
   }
 }
 
 void Game::createLevel3()
 {
-  Block* block = new Block();
-  blockVec.push_back(block);
-  block->setPos(500,400);
-  scene->addItem(block);
+  for (int i = 1; i < 6; i+=2)
+  {
+    createBlockColumn(i*92, 0, 6);
+  }
+
+  Block* block1 = new Block(Qt::gray, false);
+  block1->setPos(92, 252);
+  scene->addItem(block1);
+
+  Block* block2 = new Block(Qt::gray, false);
+  block2->setPos(276, 252);
+  scene->addItem(block2);
+
+  Block* block3 = new Block(Qt::gray, false);
+  block3->setPos(460, 252);
+  scene->addItem(block3);
 }

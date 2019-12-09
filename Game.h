@@ -17,12 +17,14 @@ public:
   Game(int lvl, QWidget* parent = nullptr);
 
   void start();
-  void createBlockColumn(double x);
+
   void createLevel1();
   void createLevel2();
   void createLevel3();
 
   const static int numberOfLevels = 3;
+
+  void createBlockColumn(int x, int y, int n);
 
   QGraphicsScene* scene;
 
@@ -31,6 +33,7 @@ public:
   std::map<int, Qt::GlobalColor> colors;
 
   int lvl;
+
 };
 
 #endif

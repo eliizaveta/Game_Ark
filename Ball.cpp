@@ -3,7 +3,7 @@
 extern Game* game;
 MainWindow* w;
 
-Ball::Ball(QObject *parent): QObject(parent), QGraphicsEllipseItem()
+Ball::Ball(QObject* parent): QObject(parent), QGraphicsEllipseItem()
 {
   setRect(0,0,35,35);
   QBrush brush;
